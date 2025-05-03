@@ -9,9 +9,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "rimraf dist",
-    "build": "vite build",
-    "postbuild": "node scripts/postbuild.js",
+    "prebuild": "node scripts/prebuild-check.js && rimraf dist",
+    "build": "vite build --config vite.config.js",
+    "postbuild": "node scripts/postbuild.js && node scripts/create-index.js",
     "check-types": "tsc -b",
     "lint": "eslint .",
     "preview": "vite preview",
