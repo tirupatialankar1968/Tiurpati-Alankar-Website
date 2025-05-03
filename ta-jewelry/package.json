@@ -11,12 +11,13 @@
     "dev": "vite",
     "prebuild": "rimraf dist",
     "build": "vite build",
+    "postbuild": "node scripts/postbuild.js",
     "check-types": "tsc -b",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy-unix": "npm run build && cp public/_redirects dist/_redirects && cp public/_headers dist/_headers",
-    "deploy-win": "npm run build && copy public\\_redirects dist\\_redirects && copy public\\_headers dist\\_headers",
-    "deploy": "npm run build && node scripts/copy-netlify-files.js"
+    "deploy-unix": "npm run build",
+    "deploy-win": "npm run build",
+    "deploy": "npm run build"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
