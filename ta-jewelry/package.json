@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/fix-build.cjs && rimraf dist",
+    "prebuild": "rimraf dist",
     "build": "vite build",
     "check-types": "tsc -b",
     "lint": "eslint .",
